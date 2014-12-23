@@ -1,0 +1,14 @@
+<?php
+
+// whitelist of users allowed to send mass-emails
+$rcmail_config['spam_whitelist'] = array();
+
+// number of seconds during which 'spam_treshhold' number of emails are allowed to send
+// if user exceeds this number, further sending is blocked
+$rcmail_config['spam_interval'] = 300;
+
+// number of e-mails allowed to send during 'spam_interval'
+$rcmail_config['spam_threshold'] = 100;
+
+
+?>
