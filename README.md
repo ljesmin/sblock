@@ -12,16 +12,16 @@ databases.
 
 To remove the spam flag for a user, run the included shell script with
 the username as a parameter (or many usernames separated with space).
-'''
+```
 	./remove_spamflag.sh <username>
-'''
+```
 
 ## INSTALL
 * Create config.inc.php
 * Run database initialization script
-'''
+```
 ./setup.mysql.sh
-'''
+```
 * Enable plugin in config/main.inc.php
 
 Authors: Markus Arro, Lauri Jesmin
