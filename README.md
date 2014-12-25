@@ -1,12 +1,4 @@
-+-------------------------------------------------------------------------+
-|
-|  Author:  Markus Arro (markus.arro@ut.ee)
-|  Author:  Lauri Jesmin (lauri.jesmin@gmail.com)
-|  Plugin:  sblock
-|  Version: 17.12.2014
-|  Purpose: Block outgoing emails if user is sending bulk e-mail
-|
-+-------------------------------------------------------------------------+
+# Sblock - RoundCube plugin for limiting number of messages per user
 
 Sblock will set a spam flag in the database for a user, based on
 two config values: spam_interval and spam_threshold. Spam flag will only
@@ -31,3 +23,5 @@ the username as a parameter (or many usernames separated with space).
 ./setup.mysql.sh
 '''
 * Enable plugin in config/main.inc.php
+
+Authors: Markus Arro, Lauri Jesmin
