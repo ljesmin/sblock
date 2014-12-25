@@ -16,7 +16,15 @@ if (!$db->is_connected() || $db->is_error()) {
 
 $userstable = get_table_name('users');
 $db->query("alter table `$userstable`
-        ADD `send_times` text,
 	ADD `spam_flag` bool DEFAULT '0';
-	")
+	");
+
+$db->query("CREATE TABLE `email_times` (
+  `time` datetime NOT NULL DEFAULT '1000-01-01 00:00:00',
+  `mailcount` int UNSIGNED NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL,
+   CONSTRAINT `user_id_fk_email_times` FOREIGN KEY (`user_id`)
+   REFERENCES `users`(`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
+   ) /*!40000 ENGINE=INNODB */ /*!40101 CHARACTER SET utf8 COLLATE utf8_general_ci */;
+");
 ?>

@@ -15,6 +15,9 @@ the period of "spam_interval". If the spam flag is set, no outgoing
 e-mails are allowed and an error message is displayed. All blocked accounts
 are logged in logs/sblock.
 
+This plugin is tested and works with MySQL, it is not tested with other 
+databases. 
+
 To remove the spam flag for a user, run the included shell script with
 the username as a parameter (or many usernames separated with space).
 '''
