@@ -28,8 +28,6 @@ class sblock extends rcube_plugin
  **/
     function check_spammer($args) {
 
-	syslog(LOG_WARNING,'Spammer: '.json_encode($args));
-
         $rcmail = rcmail::get_instance();
         $this->load_config();
         $db = $rcmail->get_dbh();
@@ -38,12 +36,9 @@ class sblock extends rcube_plugin
 	
 	$headers=$args['message']->headers();
 	if (isset($headers['To'])) $total+=1 + substr_count($headers['To'],',');
-	syslog(LOG_WARNING,'Spammer kokku To: '.$total);
 	if (isset($headers['Cc'])) $total+=1 + substr_count($headers['Cc'],',');
-	syslog(LOG_WARNING,'Spammer kokku Cc: '.$total);
 	if (isset($headers['Bcc'])) $total+=1 + substr_count($headers['Bcc'],',');
 	
-	syslog(LOG_WARNING,'Spammer kokku: '.$total);
 	
         $whitelist = $rcmail->config->get('spam_whitelist', NULL);
         $interval = $rcmail->config->get('spam_interval', NULL);
